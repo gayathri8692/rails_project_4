@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReviewApp</title>
+    <%= csrf_meta_tags %>
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+
+  <h1>APP NAME</h1>
+
+      <% if user_signed_in? %>
+        <%= image_tag current_user.avatar.url(:thumb) %>
+        <%= link_to 'signed in as ' + current_user.name, edit_user_registration_path %>
+        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+        
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+
+
+
+    <%= yield %>
+
+
+      </div>
+</nav>
+    </nav>
+  </body>
+</html>
