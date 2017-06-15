@@ -11,6 +11,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
@@ -23,7 +24,8 @@
         <%= image_tag current_user.avatar.url(:thumb) %>
         <%= link_to 'signed in as ' + current_user.name, edit_user_registration_path %>
         <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-        
+        <%= link_to "Add Image", new_photo_path %>
+
       <% else %>
         <%= link_to "Sign In", new_user_session_path %>
         <%= link_to "Sign Up", new_user_registration_path %>
