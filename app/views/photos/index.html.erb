@@ -10,12 +10,14 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  <%= image_tag current_user.avatar.url(:thumb) %>
+  <%= link_to 'Add New Photo', new_photo_path %>
   <tbody>
+
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.caption %></td>
-     
+        <td><%= image_tag photo.avatar.url(:medium) %></td>
         <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Photo', new_photo_path %>
+
