@@ -22,4 +22,99 @@
 
 .about {
   text-align: right;
+  font-family: 'Acme', sans-serif;
+}
+
+h3 {
+  font-family: 'Acme', sans-serif;
+  font-size: 44px;
+}
+
+img {
+  border-radius: 10px;
+  margin: 17px;
+}
+
+.field {
+  margin: 20px;
+}
+
+.navbar {
+  background-color: #191919;
+  color: rgb(59,89,152);
+}
+
+a {
+  color: rgb(59,89,152);
+  font-size: 24px;
+  margin: 20px;
+  font-family: 'Acme', sans-serif;
+}
+
+table{
+  margin: 0 auto;
+}
+
+th {
+  font-size: 26px;
+  font-family: 'Acme', sans-serif;
+}
+
+td {
+  font-size: 26px;
+  font-family: 'Acme', sans-serif;
+  color: black;
+}
+
+td a {
+  color: black;
+}
+
+tr {
+  
+  margin: 30px;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Acme', sans-serif;
+  color: rgb(59,89,152);
+}
+
+.welcome {
+  float: right;
+}
+
+.info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.new_img {
+  text-align: center;
+  font-family: 'Acme', sans-serif;
+  margin-bottom: 20px;
+}
+
+.new_img a{
+  font-size: 36px;
+  border: 1px solid rgb(59,89,152);
+  border-radius: 20px;
+  background-color: #191919;
+}
+
+tbody {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 900px;
+}
+
+.all {
+  background-color: rgb(59,89,152);
 }

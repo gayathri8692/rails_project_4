@@ -3,7 +3,7 @@
   <head>
     <title>ReviewApp</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -18,26 +18,30 @@
   <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
 
-  <h1>APP NAME</h1>
-
+  <h3 class="brand-logo">Judge-m</h3>
+  <div class = "info">
       <% if user_signed_in? %>
-        <%= image_tag current_user.avatar.url(:thumb) %>
-        <%= link_to 'signed in as ' + current_user.name, edit_user_registration_path %>
         <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-        <%= link_to "Add Image", new_photo_path %>
-
+        <%= link_to 'About', about_path %>
+        <%= link_to "View Your Uploads", photos_path %>
+        </div>
+        <div class = "welcome">
+        <%= link_to 'HELLO! ' + current_user.name + ' !!', edit_user_registration_path %>
+        <%= image_tag current_user.avatar.url(:thumb) %>
+        </div>
       <% else %>
         <%= link_to "Sign In", new_user_session_path %>
         <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to 'About', about_path %>
       <% end %>
-
+</nav>
 
 
     <%= yield %>
 
 
       </div>
-</nav>
+
     </nav>
   </body>
 </html>
