@@ -4,13 +4,6 @@
 <h1>Uploads</h1>
 
 
-  <%#<thead>
-    <tr>
-      <th>Caption</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>%>
   <div class = "new_img">
   <%= link_to 'Add New Photo', new_photo_path %>
   </div>
@@ -22,13 +15,20 @@
         <td><%= 'Caption: ' + photo.caption %></td>
         <td><%= image_tag photo.avatar.url(:medium) %></td>
         <%#<td><%= link_to 'Show', photo %>
+        <td>You have <%= photo.get_likes.size %> like</td>
+          <td> <%= render 'star', id: photo.id %> </td>
+        <td><%= photo.find_votes_for(:vote_scope => 'rank').sum(:vote_weight) %></td>
+        <td><%= link_to '+1', positive_photo_path(photo)%> </td>
+        <td><%= link_to '-1', negative_photo_path(photo)%> </td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </div>
       </tr>
     <% end %>
+    
   </tbody>
 </table>
+
 
 <br>
 </div>

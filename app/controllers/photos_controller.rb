@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_photo, only: [:show, :edit, :update, :destroy, :positive, :negative, :star]
 
   # GET /photos
   # GET /photos.json
@@ -71,6 +71,23 @@ class PhotosController < ApplicationController
       format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # Positive votes
+  def positive
+    @photo.upvote_by current_user
+    redirect_to(photos_path)
+  end
+
+  # Negative votes
+  def negative
+    @photo.downvote_from current_user
+    redirect_to(photos_path)
+  end
+
+  def star
+    @photo.vote_by :voter => current_user, :vote => 'like', :vote_scope => 'rank', :vote_weight => params[:rating].to_i
+    redirect_to(photos_path)
   end
 
   private
