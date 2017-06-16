@@ -16,7 +16,7 @@
         <td><%= image_tag photo.avatar.url(:medium) %></td>
         <%#<td><%= link_to 'Show', photo %>
         <td>You have <%= photo.get_likes.size %> like</td>
-          <td> <%= render 'star', id: photo.id %> </td>
+          <td> <%= render 'star', photo_id: photo.id %> </td>
         <td><%= photo.find_votes_for(:vote_scope => 'rank').sum(:vote_weight) %></td>
         <td><%= link_to '+1', positive_photo_path(photo)%> </td>
         <td><%= link_to '-1', negative_photo_path(photo)%> </td>
@@ -28,8 +28,9 @@
     
   </tbody>
 </table>
-
-
+<div class="edit">
+<%= link_to 'Back', photos_path %>
+</div>
 <br>
 </div>
 
