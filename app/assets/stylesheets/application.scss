@@ -16,9 +16,227 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.name {
-  /*padding: 0px;*/
+.about {
+  text-align: right;
+  font-family: 'Acme', sans-serif;
 }
+
+h3 {
+  font-family: 'Acme', sans-serif;
+  font-size: 24px;
+}
+
+img {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.field {
+  margin: 10px;
+}
+
+.navbar {
+  background-color: #191919;
+  color: rgb(59,89,152);
+}
+
+a {
+  color: rgb(59,89,152);
+  font-size: 14px;
+  margin: 10px;
+  font-family: 'Acme', sans-serif;
+}
+
+table{
+  margin: 0 auto;
+}
+
+th {
+  font-size: 16px;
+  font-family: 'Acme', sans-serif;
+}
+
+td {
+  font-size: 16px;
+  font-family: 'Acme', sans-serif;
+  color: black;
+}
+
+td a {
+  color: black;
+}
+
+tr {
+  margin: 10px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Acme', sans-serif;
+  color: rgb(59,89,152);
+}
+
+.welcome {
+  float: right;
+}
+
+.info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.new_img {
+  text-align: center;
+  font-family: 'Acme', sans-serif;
+  margin-bottom: 10px;
+}
+
+.new_img a{
+  font-size: 26px;
+  border: 1px solid rgb(59,89,152);
+  border-radius: 10px;
+  background-color: #191919;
+}
+
+
+
+
+tbody {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 400px;
+}
+
+.all {
+  background-color: rgb(59,89,152);
+}
+
+.signs a{
+  text-align: center;
+  font-size: 22px;
+  color: rgb(59,89,152);
+  border: 1px solid #191919;
+  background: black;
+}
+
+.signs {
+  text-align: center;
+}
+
+.info a {
+  font-size: 22px;
+}
+
+body {
+  background: rgb(59,89,152);
+}
+
+.intro p {
+  color: #191919;
+  font-size: 16px;
+  margin: 30px 50px;
+}
+
+.links {
+  text-align: center;
+  font-size: 25px;
+}
+
+.links a {
+  color: #191919;
+}
+
+.logins {
+  text-align: center;
+  font-size: 24px;
+  color: #191919;
+}
+
+input {
+  text-align: center;
+}
+
+.img {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.edit {
+  color: #191919;
+  font-size: 24px;
+  text-align: center;
+}
+
+.edit a{
+  color: #191919;
+  font-size: 24px;
+}
+
+
+
+///////////****** Style Star Rating Widget *****////////
+
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+ float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 900px) {
 
 .about {
   text-align: right;
@@ -71,7 +289,6 @@ td a {
 }
 
 tr {
-  
   margin: 30px;
   text-align: center;
   height: 300px;
@@ -181,12 +398,15 @@ input {
   font-size: 24px;
 }
 
-//star ratings
+////////////////////////////////////////////////////////
+/////////////////////star ratings///////////////////////
+////////////////////////////////////////////////////////
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 
-/****** Style Star Rating Widget *****/
+///////////****** Style Star Rating Widget *****////////
+
 
 .rating { 
   border: none;
@@ -222,3 +442,4 @@ input {
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+}
