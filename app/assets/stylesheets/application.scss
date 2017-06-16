@@ -118,3 +118,65 @@ tbody {
 .all {
   background-color: rgb(59,89,152);
 }
+
+.signs a{
+  text-align: center;
+  font-size: 35px;
+  color: rgb(59,89,152);
+  border: 1px solid #191919;
+  background: black;
+}
+
+.signs {
+  text-align: center;
+}
+
+.info a {
+  font-size: 35px;
+}
+
+body {
+  background: rgb(59,89,152);
+}
+
+.intro p {
+  color: #191919;
+  font-size: 16px;
+  margin: 60px 100px;
+}
+
+.links {
+  text-align: center;
+  font-size: 35px;
+}
+
+.links a {
+  color: #191919;
+}
+
+.logins {
+  text-align: center;
+  font-size: 24px;
+  color: #191919;
+}
+
+input {
+  text-align: center;
+}
+
+.img {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.edit {
+  color: #191919;
+  font-size: 24px;
+  text-align: center;
+}
+
+.edit a{
+  color: #191919;
+  font-size: 24px;
+}
