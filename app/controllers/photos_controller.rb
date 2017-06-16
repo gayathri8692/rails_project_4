@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @photos = current_user.photos
   end
 
   # GET /photos/1
@@ -24,19 +24,30 @@ class PhotosController < ApplicationController
 
   # POST /photos
   # POST /photos.json
+  # def create
+  #   @photo = Photo.new(photo_params)
+  #   @photo.user_id = current_user.id
+  #   respond_to do |format|
+  #     if @photo.save
+  #       format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+  #       format.json { render :show, status: :created, location: @photo }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @photo.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
   def create
-    @photo = Photo.new(photo_params)
-    @photo.user_id = current_user.id
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
+    if @photo = current_user.photos.create(photo_params)
+			flash[:success] = "photo updated."
+			redirect_to(photo_path(@photo))
+		else
+      flash.now[:alert] = "Update failed.  Please check the form."
+      render :edit
+		end
   end
+
 
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json

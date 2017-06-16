@@ -19,7 +19,6 @@
  <div class = "border">
     <% @photos.each do |photo| %>
       <tr>
-     
         <td><%= 'Caption: ' + photo.caption %></td>
         <td><%= image_tag photo.avatar.url(:medium) %></td>
         <%#<td><%= link_to 'Show', photo %>
