@@ -9,20 +9,20 @@
 <tbody>
 <div class = "border">
     <% @photos.each do |photo| %>
-  
       <tr>
         <td><%= 'Caption: ' + photo.caption %></td>
         <td><%= image_tag photo.avatar.url(:medium) %></td>
-        <td>You have <%= photo.get_likes.size %> like</td>
-        <td><i class="fa fa-thumbs-o-up"><%= link_to '+1', positive_photo_path(photo)%></i> </td>
-        <td><%= link_to '-1', negative_photo_path(photo)%> </td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </div>
-        </tr>
+        <td class = "likes">You have <%= photo.get_likes.size %> like</td>
+        <td class = "like-ones"><i class="fa fa-thumbs-o-up"><%= link_to '+1', positive_photo_path(photo)%></i> </td>
+        <td class = "like-ones"><%= link_to '-1', negative_photo_path(photo)%> </td>
+        <td class = "deletes"><%= link_to 'Edit', edit_photo_path(photo) %></td>
+        <td class = "deletes"><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</div>
+      </tr>
     <% end %>
-   
-   
     </tbody>
     </table>
-     </div>
+    <div class="edit">
+    <%= link_to 'Back', photos_path %>
+    </div>
+</div>

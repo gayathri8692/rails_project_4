@@ -17,7 +17,7 @@
         <td><%= 'Caption: ' + photo.caption %></td>
         <td><%= image_tag photo.avatar.url(:medium) %></td>
         <%#<td><%= link_to 'Show', photo %>
-        <td>You have <%= photo.get_likes.size %> like</td>
+        <td class = "likes">You have <%= photo.get_likes.size %> like</td>
         <td><%= link_to '+1', positive_photo_path(photo)%> </td>
         <td><%= link_to '-1', negative_photo_path(photo)%> </td>
         </div>

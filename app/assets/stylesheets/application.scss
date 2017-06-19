@@ -24,9 +24,9 @@
   font-family: 'Acme', sans-serif;
 }
 
-h3 {
+h3.brand-logo a{
   font-family: 'Acme', sans-serif;
-  font-size: 24px;
+  font-size: 44px;
 }
 
 img {
@@ -100,7 +100,7 @@ h1 {
 .new_img a{
   font-size: 26px;
   border: 1px solid rgb(59,89,152);
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #191919;
 }
 
@@ -159,6 +159,7 @@ body {
   text-align: center;
   font-size: 24px;
   color: #191919;
+  font-family: 'Acme', sans-serif;
 }
 
 input {
@@ -175,18 +176,55 @@ input {
   color: #191919;
   font-size: 24px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .edit a{
   color: #191919;
-  font-size: 24px;
+  font-size: 30px;
+  margin-top: 40px;
 }
 
 
 .welcomeIndex h1{
   color: black;
+  line-height: 80px;
+  font-size: 36px;
 }
 
+.actions input{
+  border-radius: 10px;
+}
+
+
+
+form#photo_search.photo_search {
+  text-align: center;
+  color: black;
+  font-family: 'Acme', sans-serif;
+  font-size: 22px;
+}
+
+td img{
+  height: 300px;
+  width: 350px;
+  margin: 60px;
+}
+
+.likes {
+  color: lightgray;
+}
+
+
+td.deletes a{
+  color: maroon;
+  margin: 50px;
+}
+
+
+.like-ones a {
+  margin: 40px;
+}
 
 ///////////****** Style Star Rating Widget *****////////
 
@@ -278,6 +316,7 @@ a {
 
 table{
   margin: 0 auto;
+  
 }
 
 th {
@@ -365,8 +404,9 @@ body {
 
 .intro p {
   color: #191919;
-  font-size: 16px;
+  font-size: 22px;
   margin: 60px 100px;
+  font-family: 'Acme', sans-serif;
 }
 
 .links {
@@ -404,6 +444,10 @@ input {
   color: #191919;
   font-size: 24px;
 }
+
+
+
+
 
 ////////////////////////////////////////////////////////
 /////////////////////star ratings///////////////////////
