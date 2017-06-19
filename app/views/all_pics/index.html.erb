@@ -1,3 +1,5 @@
+<div class = "all">
+
 <h1>Uploads</h1>
   <div class = "new_img">
   <%= link_to 'Add New Photo', new_photo_path %>
@@ -15,4 +17,5 @@
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
-    
+    </div>
+    </div>
