@@ -5,9 +5,11 @@
   <%= link_to 'Add New Photo', new_photo_path %>
   </div>
 
-
+<table>
+<tbody>
 <div class = "border">
     <% @photos.each do |photo| %>
+  
       <tr>
         <td><%= 'Caption: ' + photo.caption %></td>
         <td><%= image_tag photo.avatar.url(:medium) %></td>
@@ -16,6 +18,11 @@
         <td><%= link_to '-1', negative_photo_path(photo)%> </td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         </div>
+        </tr>
     <% end %>
-    </div>
-    </div>
+   
+   
+    </tbody>
+    </table>
+     </div>
