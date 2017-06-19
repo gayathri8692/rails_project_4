@@ -1,0 +1,18 @@
+
+<%= search_form_for @search do |f| %>
+<div class="field">
+<%= f.label :caption_cont, "Name Contains" %>
+<%= f.text_field :caption_cont %>
+</div>
+<div class="actions"><%= f.submit "Search" %> </div>
+<% end %>
+
+<div class = "border">
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= 'Caption: ' + photo.caption %></td>
+        <td><%= image_tag photo.avatar.url(:medium) %></td>
+       
+        </div>
+      </tr>
+    <% end %>

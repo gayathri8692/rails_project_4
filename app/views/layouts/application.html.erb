@@ -4,11 +4,13 @@
     <title>ReviewApp</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
@@ -17,14 +19,13 @@
   <body>
   <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
-
   <h3 class="brand-logo">Judge-m</h3>
   <div class = "info">
-  
       <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
         <%= link_to 'About', about_path %>
-        <%= link_to "View Your Uploads", photos_path %>
+        <%= link_to "All Reviews", photos_path %>
+        <%= link_to 'Your Uploads', all_pics_index_path %>
         </div>
         <div class = "welcome">
         <%= link_to 'HELLO! ' + current_user.name + ' !!', edit_user_registration_path %>
@@ -36,13 +37,11 @@
         <%= link_to 'About', about_path %>
       <% end %>
 </nav>
-
+       
 
     <%= yield %>
-
-
       </div>
-
     </nav>
+   
   </body>
 </html>

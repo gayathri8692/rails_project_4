@@ -1,12 +1,14 @@
 <div class = "all">
 <p id="notice"><%= notice %></p>
 
-<h1>Uploads</h1>
 
-
-  <div class = "new_img">
-  <%= link_to 'Add New Photo', new_photo_path %>
-  </div>
+<%= search_form_for @search do |f| %>
+<div class="field">
+<%= f.label :caption_cont, "Search Tags" %>
+<%= f.text_field :caption_cont %>
+</div>
+<div class="actions"><%= f.submit "Search" %> </div>
+<% end %>
   <table>
   <tbody>
  <div class = "border">
@@ -16,20 +18,15 @@
         <td><%= image_tag photo.avatar.url(:medium) %></td>
         <%#<td><%= link_to 'Show', photo %>
         <td>You have <%= photo.get_likes.size %> like</td>
-          <td> <%= render 'star', photo_id: photo.id %> </td>
-        <td><%= photo.find_votes_for(:vote_scope => 'rank').sum(:vote_weight) %></td>
         <td><%= link_to '+1', positive_photo_path(photo)%> </td>
         <td><%= link_to '-1', negative_photo_path(photo)%> </td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </div>
       </tr>
     <% end %>
-    
   </tbody>
 </table>
 <div class="edit">
-<%= link_to 'Back', photos_path %>
+<%= link_to 'Back', root_path %>
 </div>
 <br>
 </div>

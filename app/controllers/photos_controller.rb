@@ -1,10 +1,13 @@
 class PhotosController < ApplicationController
+
   before_action :set_photo, only: [:show, :edit, :update, :destroy, :positive, :negative, :star]
 
   # GET /photos
   # GET /photos.json
   def index
-    @photos = current_user.photos
+    @search = Photo.search(params[:q])
+    @photos = @search.result
+    #@photos = current_user.photos
   end
 
   # GET /photos/1
@@ -21,6 +24,25 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
   end
+
+
+
+  def all
+    # binding.pry
+    @photo = Photo.all
+    # redirect_to (photos_path)
+  end
+
+
+  def search
+    @search = Photo.search(params[:q])
+    @photos = @search.result
+  end
+  
+
+
+
+
 
   # POST /photos
   # POST /photos.json
