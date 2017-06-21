@@ -13,7 +13,7 @@
         <td><%= 'Caption: ' + photo.caption %></td>
         <td><%= image_tag photo.avatar.url(:medium) %></td>
         <td class = "likes">You have <%= photo.get_likes.size %> like</td>
-        <td class = "like-ones"><i class="fa fa-thumbs-o-up"><%= link_to '+1', positive_photo_path(photo)%></i> </td>
+        <td class = "like-ones"><%= link_to '+1', positive_photo_path(photo)%></i> </td>
         <td class = "like-ones"><%= link_to '-1', negative_photo_path(photo)%> </td>
         <td class = "deletes"><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td class = "deletes"><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

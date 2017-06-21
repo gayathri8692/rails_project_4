@@ -20,6 +20,7 @@
         <td class = "likes">You have <%= photo.get_likes.size %> like</td>
         <td><%= link_to '+1', positive_photo_path(photo)%> </td>
         <td><%= link_to '-1', negative_photo_path(photo)%> </td>
+        
         </div>
       </tr>
     <% end %>
