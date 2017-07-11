@@ -35,6 +35,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'ransack', '~> 1.8', '>= 1.8.3'
 gem 'font-awesome-sass', '~> 4.7.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

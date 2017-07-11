@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'all_pics/index'
+
   get '/aphotos', to: 'photos#all'
+
   post '/rate' => 'rater#create', :as => 'rate'
+
   resources :photos do
     member do
       get "positive", to: "photos#positive"
@@ -10,17 +13,14 @@ Rails.application.routes.draw do
       get "search", to: "photos#search"
       get 'all_pics/index', to: 'all_pics#index'
     end
-    
   end
-  
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :users
-  
-  
+
   get '/about', to: 'welcome#about'
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#index'
 end
